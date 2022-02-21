@@ -1,0 +1,141 @@
+Question-1
+
+package com.org.assesment2;
+import java.util.Scanner;
+public class Bill_Question1 {
+
+	 public static int meterReading(String inp1, String inp2, int inp3) {
+		    int x = Integer.parseInt(inp1.substring(5, inp1.length()));
+		    int y = Integer.parseInt(inp2.substring(5, inp2.length()));
+		    int z = Math.abs((y - x) * inp3);
+		    return z;
+		  }
+		  public static void main(String[] args) {
+		    Scanner scan = new Scanner(System.in);
+		    String string1 = scan.nextLine();
+		    String string2 = scan.nextLine();
+		    int z = scan.nextInt();
+		    int n1 = meterReading(string1, string2, z);
+		    System.out.println(n1);
+		  }
+		}
+
+Output: -
+ABC2012345 
+ABC2012660 
+4 
+
+Question-2
+
+package com.org.assesment2;
+
+
+import java.util.*;
+
+public class MainQuestion2 {
+
+public static void main(String[] args) {
+Scanner scan=new Scanner(System.in);
+String s1=scan.next();
+if(s1.matches("[#]{1}[A-F0-9]{6}"))
+{
+System.out.println("Valid");
+}
+else
+{
+System.out.println("Invalid");
+}
+
+}
+}
+
+Output-2
+#FF9922 
+ Valid
+
+Question-3
+package com.org.assesment2;
+
+
+import java.util.*;  
+public class MainQuestion3 
+{   
+ 
+  static int nCr(int n, int r)   
+  {   
+        return fact(n) / (fact(r) * fact(n - r));   
+  }   
+  
+  static int fact(int n)   
+  {   
+        int res = 1;   
+        for (int i = 2; i <= n; i++)   
+        res = res * i;   
+        return res;   
+  }   
+ public static void main(String[] args)   
+ {   
+     
+     Scanner sc = new Scanner(System.in);  
+     int n,r;  
+     System.out.println("Enter the value of n :");  
+     n = sc.nextInt();  
+     System.out.println("Enter the value of r :");
+     r = sc.nextInt();  
+     if(n>=r)
+	   System.out.println("Value of "+ n+"C"+r+"= "+nCr(n, r)); 
+	 else
+		  System.out.println("n value should be greater than or equals to r value");
+ }   
+} 
+
+ 
+Output-3
+Enter the value of n :
+10
+Enter the value of r :
+3
+Value of 10C3= 120
+
+Question-4
+
+package com.org.assesment2;
+
+import java.util.Scanner;
+public class MainQuestion4 {
+  public static void main(String[] args) {
+    Scanner scan = new Scanner(System.in);
+    String a = scan.next();
+    if (a.length() >= 8) {
+      if (a.contains("#") || a.contains("@") || a.contains("_")) {
+        char c = a.charAt(0);
+        //System.out.println(c);
+        if (Character.isAlphabetic(c)) {
+          char dd = a.charAt(a.length() - 1);
+          
+          if ((Character.isAlphabetic(dd)) || (Character.isDigit(dd)))
+          {
+            if (a.matches(".*[0-9]{1,}.*")
+                || a.matches(".*[a-zA-Z]{1,}.*")) {
+              System.out.println("Valid");
+            } else
+              System.out.println("Inalid");
+            
+          } else
+            System.out.println("Invalid");
+          
+        }
+         else
+            System.out.println("Invalid");
+          
+      } else
+        System.out.println("Invalid");
+      
+    } else
+      System.out.println("Invalid");
+    
+  }
+}
+
+
+
